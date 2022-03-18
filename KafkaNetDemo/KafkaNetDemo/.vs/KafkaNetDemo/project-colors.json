@@ -1,0 +1,141 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "225d6559-61cd-4513-8337-4230b73564b6": {
+      "ProjectGuid": "225d6559-61cd-4513-8337-4230b73564b6",
+      "DisplayName": "KafkaNetDemo",
+      "ColorIndex": 0
+    },
+    "5f56d043-4932-43a7-94fe-83eb6f9f9170": {
+      "ProjectGuid": "5f56d043-4932-43a7-94fe-83eb6f9f9170",
+      "DisplayName": "KafkaEmployeeProducerService",
+      "ColorIndex": 1
+    },
+    "8236d33c-82e5-41ed-aa35-f6cb51e8c322": {
+      "ProjectGuid": "8236d33c-82e5-41ed-aa35-f6cb51e8c322",
+      "DisplayName": "TimeOff.Models",
+      "ColorIndex": 2
+    },
+    "7637e101-d654-40d7-8cb2-c3b8bf5bece6": {
+      "ProjectGuid": "7637e101-d654-40d7-8cb2-c3b8bf5bece6",
+      "DisplayName": "KafkaEmployeeConsumerSevice",
+      "ColorIndex": 3
+    },
+    "af3c3205-aba2-43b8-906e-fa66a4c3c4bc": {
+      "ProjectGuid": "af3c3205-aba2-43b8-906e-fa66a4c3c4bc",
+      "DisplayName": "Rabbitmq.Producer",
+      "ColorIndex": 4
+    },
+    "fb0910f6-a01b-4c4b-ac6a-b829186c0558": {
+      "ProjectGuid": "fb0910f6-a01b-4c4b-ac6a-b829186c0558",
+      "DisplayName": "Rabbitmq.Consumer",
+      "ColorIndex": 5
+    },
+    "6edfefe0-1e97-4a66-8970-188ba4dfceda": {
+      "ProjectGuid": "6edfefe0-1e97-4a66-8970-188ba4dfceda",
+      "DisplayName": "TrySwaggerMinimalApi",
+      "ColorIndex": 6
+    },
+    "d4eca96c-598f-43f8-bad9-63ac7df843f7": {
+      "ProjectGuid": "d4eca96c-598f-43f8-bad9-63ac7df843f7",
+      "DisplayName": "BasicStateMachine",
+      "ColorIndex": 7
+    },
+    "6f376640-5ba6-43de-9371-a10f1a532c85": {
+      "ProjectGuid": "6f376640-5ba6-43de-9371-a10f1a532c85",
+      "DisplayName": "StatelessStateMachine",
+      "ColorIndex": 8
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "a7729d5e-b25c-47be-92d0-fb0f29cbb23d": {
+      "ProjectGuid": "a7729d5e-b25c-47be-92d0-fb0f29cbb23d",
+      "DisplayName": "OrderService",
+      "ColorIndex": 9
+    },
+    "600c91cf-f8e1-4e44-8785-0fa3dec51da4": {
+      "ProjectGuid": "600c91cf-f8e1-4e44-8785-0fa3dec51da4",
+      "DisplayName": "InventoryService",
+      "ColorIndex": 10
+    },
+    "64319e50-a79a-4956-bfb6-b0c34c8ad15e": {
+      "ProjectGuid": "64319e50-a79a-4956-bfb6-b0c34c8ad15e",
+      "DisplayName": "NotificationService",
+      "ColorIndex": 11
+    },
+    "7c4e3cbc-740f-40c9-9cce-3ac746b9f7e9": {
+      "ProjectGuid": "7c4e3cbc-740f-40c9-9cce-3ac746b9f7e9",
+      "DisplayName": "SagaOchestrator",
+      "ColorIndex": 12
+    },
+    "9237e701-0329-4802-a100-6a2b421c5748": {
+      "ProjectGuid": "9237e701-0329-4802-a100-6a2b421c5748",
+      "DisplayName": "MassTransitWithRabbitMq",
+      "ColorIndex": 13
+    },
+    "37474a3d-86eb-4ba5-9118-65a55794affd": {
+      "ProjectGuid": "37474a3d-86eb-4ba5-9118-65a55794affd",
+      "DisplayName": "MassTransit.RabbitMq",
+      "ColorIndex": 14
+    },
+    "c76c40c3-11f2-4755-b69e-ecf8c057b188": {
+      "ProjectGuid": "c76c40c3-11f2-4755-b69e-ecf8c057b188",
+      "DisplayName": "MassTransitUsingRabbitMqDemo.Producer",
+      "ColorIndex": 15
+    },
+    "e5fb9f2a-0c0b-4c26-9dea-656fc8a76721": {
+      "ProjectGuid": "e5fb9f2a-0c0b-4c26-9dea-656fc8a76721",
+      "DisplayName": "Order",
+      "ColorIndex": 0
+    },
+    "97a726a4-0ee0-45ec-aabf-ed65291f5d87": {
+      "ProjectGuid": "97a726a4-0ee0-45ec-aabf-ed65291f5d87",
+      "DisplayName": "MassTransit.Models",
+      "ColorIndex": 1
+    },
+    "4d24c906-46fe-4e5b-a76a-39943c1f76b5": {
+      "ProjectGuid": "4d24c906-46fe-4e5b-a76a-39943c1f76b5",
+      "DisplayName": "MassTransitUsingRabbitMqDemo.Subcriber",
+      "ColorIndex": 2
+    },
+    "6f986984-68c9-4b3d-bc76-fa6bca9c5af0": {
+      "ProjectGuid": "6f986984-68c9-4b3d-bc76-fa6bca9c5af0",
+      "DisplayName": "MediaR.MassTransit",
+      "ColorIndex": 3
+    },
+    "a372cbd5-71f0-4c5b-8661-84427cad92c8": {
+      "ProjectGuid": "a372cbd5-71f0-4c5b-8661-84427cad92c8",
+      "DisplayName": "MassTransitInMemory",
+      "ColorIndex": 4
+    },
+    "b771dda2-657e-4247-a746-3fa374e6d4ba": {
+      "ProjectGuid": "b771dda2-657e-4247-a746-3fa374e6d4ba",
+      "DisplayName": "UploadLargeFile",
+      "ColorIndex": 5
+    },
+    "774ff999-eacd-4149-b574-91698e290d30": {
+      "ProjectGuid": "774ff999-eacd-4149-b574-91698e290d30",
+      "DisplayName": "ParallelCheck",
+      "ColorIndex": 6
+    },
+    "65665f49-2f96-4666-b638-fc5f4338c41d": {
+      "ProjectGuid": "65665f49-2f96-4666-b638-fc5f4338c41d",
+      "DisplayName": "MassTransitDemo.Models",
+      "ColorIndex": 7
+    },
+    "1d50b820-8403-487c-881d-475e84a0ae80": {
+      "ProjectGuid": "1d50b820-8403-487c-881d-475e84a0ae80",
+      "DisplayName": "MassTransitDemo.SagaStateMachine",
+      "ColorIndex": 8
+    },
+    "5940ef84-9810-4bec-9d1a-86947fda293e": {
+      "ProjectGuid": "5940ef84-9810-4bec-9d1a-86947fda293e",
+      "DisplayName": "CosmosDb.Demo1",
+      "ColorIndex": 9
+    }
+  },
+  "NextColorIndex": 10
+}
