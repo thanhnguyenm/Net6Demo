@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  altielts:
+    image: ${DOCKER_REGISTRY-}altielts
+    build:
+      context: .
+      dockerfile: ALTIELTS/Dockerfile

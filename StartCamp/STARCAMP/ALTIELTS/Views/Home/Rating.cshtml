@@ -1,0 +1,94 @@
+﻿@model ALTIELTS.Entities.SurveyQuestion
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="container">
+    @*<div class="center">
+        <img class="logo" src="~/images/logo.png" />
+    </div>*@
+    <h4 class="header center" style="font-weight: bold; mả">ĐÁNH GIÁ CHẤT LƯỢNG DỊCH VỤ</h4>
+    <p class="main-title-desc center">Bạn đang đánh giá chi nhánh <strong>Phan Chu Trinh</strong></p>
+
+    <div id="modal1" class="modal open" tabindex="0" style="display: block;">
+        <form method="post">
+            @Html.AntiForgeryToken()
+            <div class="modal-content">
+                <h5 class="center text-darken-1">
+                    @if (Model != null)
+                    {
+                        @Model.Question
+                        <input id="QuestionId" name="QuestionId" value="@Model.Id" type="hidden" />
+                        <input id="Question" name="Question" value="@Model.Question" type="hidden" />
+                    }
+                </h5>
+                <div class="row">
+
+                    <div class="col s12 center">
+                        <img class="smile" data-value="1" src="~/images/emoji/crying.png" />
+                        <img class="smile" data-value="2" src="~/images/emoji/unhappy.png" />
+                        <img class="smile" data-value="3" src="~/images/emoji/happy.png" />
+                        <img class="smile" data-value="4" src="~/images/emoji/smile.png" />
+                        <img class="smile" data-value="5" src="~/images/emoji/in-love.png" />
+                    </div>
+                    <div class="col s12 center">
+                        <img class="rate-star" data-value="1" src="~/images/star-not-rating.png" />
+                        <img class="rate-star" data-value="2" src="~/images/star-not-rating.png" />
+                        <img class="rate-star" data-value="3" src="~/images/star-not-rating.png" />
+                        <img class="rate-star" data-value="4" src="~/images/star-not-rating.png" />
+                        <img class="rate-star" data-value="5" src="~/images/star-not-rating.png" />
+                    </div>
+                    <div class="col s12 center">
+                        <input id="Rating" name="Rating" type="hidden" />
+                        <textarea id="Comment" name="Comment" class="browser-default" placeholder="Xin cho biết ý kiến của bạn để chúng tôi phục vụ tốt hơn" style="height: 100px"></textarea>
+                    </div>
+                    <div class="col s12 helper-text" id="errors">
+                        @if (ViewBag.Errors != null)
+                        {
+                            @ViewBag.Errors
+                        }
+                    </div>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <div class="center">
+                    <input type="submit" class="waves-effect waves-light btn-small start-button red" value="Gửi" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<partial name="~/Views/Shared/_ChangeService.cshtml" />
+
+
+@section Scripts{
+    <script>
+        $('img.rate-star').click(function () {
+            let val = parseInt($(this).attr('data-value'));
+            $('.rate-star').each((i, ele) => {
+                let itemVal = parseInt($(ele).attr('data-value'));
+                if (itemVal <= val) {
+                    $(ele).attr('src', '/images/star.png');
+                }
+                else {
+                    $(ele).attr('src', '/images/star-not-rating.png');
+                }
+            })
+
+            $('.smile').each((i, ele) => {
+                let itemVal = parseInt($(ele).attr('data-value'));
+                if (itemVal === val) {
+                    $(ele).css('display','inline')
+                }
+                else {
+                    $(ele).css('display','none')
+                }
+            })
+            $('#Rating').val(val);
+        })
+    </script>
+}

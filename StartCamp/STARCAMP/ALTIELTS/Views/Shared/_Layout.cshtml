@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ALTIELTS</title>
+    <link rel="stylesheet" href="~/lib/materialize/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/smallScreen.css" media="screen and (max-width: 767px)" />
+    <link rel="stylesheet" href="~/css/widescreen.css" media="screen and (min-width: 768px)" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper white">
+                <a href="#!" class="brand-logo center"><img class="logo" src="~/images/logo.png" /></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right" style="color: red"><i class="material-icons">menu</i></a>
+                @if (Context.User != null)
+                {
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                            <a class="dropdown-trigger" href="#!" data-target="dropdown1">Tùy chọn<i class="material-icons right">arrow_drop_down</i></a>
+                        </li>
+                    </ul>
+                }
+
+
+            </div>
+        </nav>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">Đổi dịch vụ</a></li>
+            <li><a href="/Home/Logout">Thoát</a></li>
+        </ul>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+        </ul>
+
+
+    </header>
+
+
+
+    <div class="section no-pad-bot">
+        @RenderBody()
+
+    </div>
+
+    
+
+    <div style="clear:both"></div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/materialize/materialize.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

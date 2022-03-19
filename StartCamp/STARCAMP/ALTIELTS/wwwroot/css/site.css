@@ -1,0 +1,184 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+/* */
+.main-title-desc {
+    color: gray;
+}
+
+.start-button {
+    border-radius: 50px;
+    width: 200px;
+}
+
+.card-color {
+    background-color: darkred;
+}
+
+.card-img-top{
+    width: 50px;
+    display: block;
+    float: left;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.card-title {
+    color: white;
+    font-weight: bold !important;
+}
+
+
+.card-image {
+    padding: 30px 0 20px 0;
+}
+
+.card-image img {
+    margin: auto !important;
+}
+
+.input-field > label{
+    color: white !important;
+}
+
+input[type=password]:not(.browser-default) {
+    border-color: white !important;
+}
+
+.f18{
+    font-size: 18px !important;
+}
+
+.inner-card {
+    padding: 2px;
+    border-radius: 5px;
+    border: solid 1px #fff;
+    text-align: center;
+    display: block;
+}
+
+.inner-card img {
+    width: 40px;
+    color: white;
+    filter: brightness(200);
+}
+
+    .inner-card div {
+        padding: 30px 10px 30px 10px;
+        text-align: center;
+    }
+
+.inner-card div:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.rate-star, .smile {
+    width: 40px;
+}
+
+.smile{
+    display: none;
+}
+
+.rate-star:hover {
+    cursor: pointer;
+}
+
+.material-icon {
+    font-family: 'Material Icons';
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+/*nav {
+    background-color: white !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+nav a{
+    color: black  !important;
+}*/
+
+@media only screen and (max-width: 992px) {
+    .sidenav.sidenav-fixed {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+}
+
+.modal{
+    position: inherit!important;
+    width: 80%;
+    height: auto;
+}

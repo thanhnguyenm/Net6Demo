@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAmgQ5pUIcE0yz5/gpS3xI5gAAAAACAAAAAAAQZgAAAAEAACAAAACjtoXSygZ1xd/q26eP18WY96wS9ubCdHovH4Iace1xoAAAAAAOgAAAAAIAACAAAAD1IgclYhVm9FUOhcqwkhdP1UZzKNLPFFx4i0x/RZVfliAAAABSwGz5aZmC2X2/LeWmQ7LcOikI8YGJLFQuRtKdRJmdn0AAAAAUeswgEDuRgEtg0LWc8tmOu8CSDD9A3lPRonmxLISBwKmSkrc/RsU2wy/kVFhnfdzfW3GsXjTbE5Ze6pdfWGTe</EncryptedPassword>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="StartCampContext">
+      <Value>Data Source=DESKTOP-HS69KHM\SQLEXPRESS%3bInitial Catalog=StartCampDemo%3bUser ID=sa%3bPwd=123456789x%40X</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="ALTIELTS.DatabaseContext.StartCampContext">
+      <Value>Data Source=db%3bInitial Catalog=StartCampDemo%3bUser ID=sa%3bPwd=123456789x%40X</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

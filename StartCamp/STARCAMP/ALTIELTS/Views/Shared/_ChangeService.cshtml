@@ -1,0 +1,91 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<!-- Modal Structure -->
+<div id="modalChangeService" class="modal">
+    <div class="modal-content">
+        <h4>Vui lòng nhập passcode</h4>
+        <form id="modalform" action="/Home/Login" method="post">
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="Passcode" name="Passcode" type="password" class="validate">
+                    <label for="Passcode">Passcode</label>
+                    <i class="material-icons" style="position: absolute; right: 10px; bottom: 15px;">visibility_off</i>
+                </div>
+                <div class="col s12">
+                    <label class="card-title f18">Chọn dịch vụ cần đổi</label>
+                    <input id="ModalServices" name="ModalServices" type="hidden">
+                </div>
+                @if (ViewBag.Service != null)
+                {
+                    var services = ViewBag.Service as List<ALTIELTS.Entities.Service>;
+                    foreach (var service in services)
+                    {
+                        <div class="col s12 m4 center">
+                            <a class="inner-card" href="#" modalServices="@service.Id.ToString()">
+                                <div>
+                                    <img src="~/images/login/@service.Icon.ToString()" alt="Card image cap">
+                                </div>
+                            </a>
+                        </div>
+                    }
+                }
+
+            </div>
+
+            <div class="center">
+                <input type="submit" class="waves-effect waves-light btn-small start-button red" value="Bắt đầu đánh giá" />
+            </div>
+            <div class="helper-text" id="errors">
+                @if (ViewBag.Errors != null)
+                {
+                    @ViewBag.Errors
+                }
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>
+
+<script>
+        var modalSelected;
+        $('a[services]').click(function () {
+            $('a[modalServices] div').css('background-color', '');
+            $('a[modalServices] img').css('filter', 'brightness(200)');
+            $(this).find('div').css('background-color', 'white');
+            $(this).find('img').css('filter', 'hue-rotate(45deg)');
+            selected = $(this).attr('modalServices');
+
+            $('#Service').val(modalSelected);
+
+        });
+
+        //$('#modalSubmit').click(function () {
+        //    $("#modalform").ajaxForm({ url: '/Home/Login', type: 'post' })
+
+        //});
+
+        $("#modalform").submit(function(e) {
+
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+
+            var form = $(this);
+            var url = form.attr('action');
+
+            $.ajax({
+                   type: "POST",
+                   url: url,
+                   data: form.serialize(), // serializes the form's elements.
+                   success: function(data)
+                   {
+                       window.location = "/Home/Rating";
+                   }
+                 });
+
+
+        });
+</script>
