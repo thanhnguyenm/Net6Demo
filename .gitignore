@@ -5,3 +5,4 @@ AdvancedDapper/.vs/
 AdvancedDapper/DapperDB/[Bb]in/
 AdvancedDapper/DapperDB/[Oo]bj/
 packages/
+node_modules/
