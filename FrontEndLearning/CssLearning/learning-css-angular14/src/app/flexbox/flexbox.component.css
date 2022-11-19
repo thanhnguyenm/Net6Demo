@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  border: 1px solid blue;
+  max-width: 1200px;
+  justify-content: space-between;
+}
+
+.box1{
+  padding: 5px;
+  border: 1px solid #ddd;
+  box-shadow: var(--generic-shadow);
+  font-weight: 500;
+  text-align: left;
+  max-width: 30rem;
+  
+}
+
+.box{
+  padding: 5px;
+  border: 1px solid #ddd;
+  box-shadow: var(--generic-shadow);
+  font-weight: 500;
+  text-align: left;
+  max-width: 30rem;
+  
+}

@@ -1,0 +1,91 @@
+/* A href that contains "example.com" */
+[href*='example.com'] {
+  color: red;
+  font-size: 16pt;
+}
+
+/* A href that starts with https */
+[href^='https'] {
+  color: yellow;
+  font-size: 12pt;
+}
+
+/* A href that ends with .com */
+[href$='.com'] {
+  color: blue;
+}
+
+a::before {
+  content: 'Prefix - ';
+}
+
+p::selection {
+  background: black;
+  color: white;
+}
+
+.button:active {
+  transform: scale(0.99);
+  box-shadow: none;
+}
+
+.button:focus {
+  outline: 2px dashed blue;
+  outline-offset: 2px;
+  background-color: black;
+}
+
+.helper {
+  display: none;
+}
+
+:focus-within .helper {
+  display: block;
+}
+
+.helper {
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+
+/* remove remove forcus ring */
+button:focus {
+	outline: none;
+}
+
+button:focus-visible {
+	outline: 1px solid black;
+}
+
+/* You can attach styles to that element when the url contains #content. */
+#content:target {
+	background: yellow;
+}
+
+/* Next sibling combinator  */
+.top * + * {
+  margin-top: 1.5em;
+}
+
+/* Presentation styles */
+.top p {
+  border: 1px solid var(--color-primary);
+  background: var(--color-light);
+  padding: 1em;
+}
+
+/* Presentational styles */
+.top > * + * {
+  position: relative;
+}
+
+.top > * + *::before {
+  content: "";
+  width: 100%;
+  height: 1.5em;
+  background: #ff807b;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  outline: 1px solid #9d0600;
+}

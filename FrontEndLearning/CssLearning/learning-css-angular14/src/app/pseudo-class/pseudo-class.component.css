@@ -1,0 +1,48 @@
+.my-parent div:first-of-type {
+	color: red;
+}
+
+li:nth-child(2) {
+  background: yellow;
+}
+
+li:nth-child(3n+3) {
+  background: purple;
+}
+
+
+.my-parent div:nth-of-type(2) {
+	color: blue;
+}
+
+tr:nth-child(even) td {
+  background: #f3f3f3;
+}
+
+table {
+  border: 1px solid var(--color-stroke);
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  border-bottom: 1px solid var(--color-stroke);
+}
+
+th, td {
+  padding: 1rem;
+}
+
+td + td,
+th + th {
+  border-left: 1px solid var(--color-stroke);
+  text-align: right;
+}
+
+strong:only-of-type {
+  background: yellow;
+}
+
+article :is(h2, li, img) {
+  border: solid 1px;
+}

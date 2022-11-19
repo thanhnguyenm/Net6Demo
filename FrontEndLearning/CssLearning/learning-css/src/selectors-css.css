@@ -1,0 +1,30 @@
+/* A href that contains "example.com" */
+[href*='example.com'] {
+  color: red;
+  font-size: 16pt;
+}
+
+/* A href that starts with https */
+[href^='https'] {
+  color: yellow;
+  font-size: 12pt;
+}
+
+/* A href that ends with .com */
+[href$='.com'] {
+  color: blue;
+}
+
+a::before {
+  content: 'Prefix - ';
+}
+
+p::selection {
+  background: black;
+  color: white;
+}
+
+.button:active {
+  transform: scale(0.99);
+  box-shadow: none;
+}
