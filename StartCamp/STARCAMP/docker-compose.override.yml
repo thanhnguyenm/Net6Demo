@@ -2,21 +2,26 @@ version: '3.4'
 
 services:
   altielts:
+    image: thanhnmitc/altielts:v1.0.0
+    container_name: altielts_service
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password="123456789x@X"
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=./https/aspnetapp.pfx
     ports:
-      - "8080:80"
-      - "8081:443"
+      - "49111:80"
+      - "49112:443"
     volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-    depends_on:
-      - db
-  db:
-    image: "mcr.microsoft.com/mssql/server"
-    environment:
-        SA_PASSWORD: "123456789x@X"
-        ACCEPT_EULA: "Y"
-    ports:
-      - "1443:1443"
+      - ~/.aspnet/https:/https:ro
+    #  - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+    #  - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    #depends_on:
+    #  - db
+  #db:
+  #  image: "mcr.microsoft.com/mssql/server"
+  #  environment:
+  #      SA_PASSWORD: "123456789x@X"
+  #      ACCEPT_EULA: "Y"
+  #  ports:
+  #    - "1443:1443"
