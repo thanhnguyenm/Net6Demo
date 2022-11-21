@@ -1,6 +1,3 @@
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 as base
-WORKDIR /app
-
 FROM mcr.microsoft.com/dotnet/sdk:6.0 as build
 WORKDIR /src
 
@@ -18,12 +15,10 @@ COPY OrderDbContext/ OrderDbContext/
 WORKDIR /src/Sales
 RUN dotnet publish -c Release -o /app/publish
 
-FROM base as final
-WORKDIR /app
-COPY --from=build /app/publish .
+WORKDIR /app/publish
 
 EXPOSE 80
 EXPOSE 443
-ENTRYPOINT [ "dotnet", "Sales.dll" ] 
+CMD [ "./Sales" ] 
 
 
