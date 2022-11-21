@@ -7,3 +7,5 @@ AdvancedDapper/DapperDB/[Oo]bj/
 packages/
 node_modules/
 .svn/
+.learningtransport/
+.vscode/

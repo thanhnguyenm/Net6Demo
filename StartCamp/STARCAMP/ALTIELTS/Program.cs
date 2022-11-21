@@ -23,6 +23,7 @@ namespace ALTIELTS
                 {
                     webBuilder.UseStartup<Startup>();
                 })
+                .ConfigureLogging(opt => opt.AddConsole())
                 .UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration));
     }
 }

@@ -7,8 +7,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
-      - ASPNETCORE_Kestrel__Certificates__Default__Password="123456789x@X"
-      - ASPNETCORE_Kestrel__Certificates__Default__Path=./https/aspnetapp.pfx
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=123456789x@X
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
     ports:
       - "49111:80"
       - "49112:443"

@@ -1,0 +1,60 @@
+version: '3.4'
+
+services:
+  # azurite:
+  #   image: mcr.microsoft.com/azure-storage/azurite
+  #   command: "azurite --loose --blobHost 0.0.0.0 --blobPort 10000 --queueHost 0.0.0.0 --queuePort 10001 --location /workspace --debug /workspace/debug.log"
+  #   ports:
+  #     - 10010:10000
+  #     - 10011:10001
+  #     - 10012:10002
+  #   volumes:
+  #     - ./azurite:/workspace
+  clientUI:
+    image: thanhnmitc/nservicebus_clientui:v1.0.0
+    build:
+      context: .
+      dockerfile: clientUI/Dockerfile
+    container_name: nservicebus_clientui
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=123456789x@X
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    ports:
+      - "49113:80"
+      - "49114:443"
+    volumes:
+      - ~/.aspnet/https:/https:ro
+  sales:
+    image: thanhnmitc/nservicebus_sales:v1.0.0
+    build:
+      context: .
+      dockerfile: sales/Dockerfile
+    container_name: nservicebus_sales
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=123456789x@X
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    ports:
+      - "49115:80"
+      - "49116:443"
+    volumes:
+      - ~/.aspnet/https:/https:ro
+  billing:
+    image: thanhnmitc/nservicebus_billing:v1.0.0
+    build:
+      context: .
+      dockerfile: billing/Dockerfile
+    container_name: nservicebus_billing
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=123456789x@X
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    ports:
+      - "49117:80"
+      - "49118:443"
+    volumes:
+      - ~/.aspnet/https:/https:ro

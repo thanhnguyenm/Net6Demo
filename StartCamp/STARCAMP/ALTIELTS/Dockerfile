@@ -3,10 +3,12 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
-COPY ALTIELTS.csproj ALTIELTS/
+#COPY ALTIELTS.csproj ALTIELTS/
+COPY ./ALTIELTS/ALTIELTS.csproj ALTIELTS/
 RUN dotnet restore ALTIELTS/ALTIELTS.csproj
 
-COPY . ALTIELTS/
+#COPY . ALTIELTS/
+COPY ./ALTIELTS/ ALTIELTS/
 WORKDIR /src/ALTIELTS
 RUN dotnet publish -c Release -o /app/publish
 

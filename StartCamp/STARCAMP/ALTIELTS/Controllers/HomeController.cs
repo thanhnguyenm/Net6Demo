@@ -14,6 +14,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using ALTIELTS.Entities;
+using Microsoft.Extensions.Configuration;
 
 namespace ALTIELTS.Controllers
 {
@@ -21,12 +22,15 @@ namespace ALTIELTS.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IConfiguration _configuation;
 
         public HomeController(ILogger<HomeController> logger,
-                                IUnitOfWork unitOfWork)
+                                IUnitOfWork unitOfWork,
+                                IConfiguration configuation)
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
+            _configuation = configuation;
         }
 
         public IActionResult Index()
@@ -68,6 +72,7 @@ namespace ALTIELTS.Controllers
         {
             List<string> errors = new List<string>();
 
+             _logger.LogInformation(_configuation.GetConnectionString("StartCampContext"));
             if (ModelState.IsValid)
             {
                 //validate user
