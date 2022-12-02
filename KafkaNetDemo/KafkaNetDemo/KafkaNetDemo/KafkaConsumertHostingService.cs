@@ -12,7 +12,7 @@ using System.Text;
 public class KafkaConsumertHostingService : IHostedService
 {
     private readonly ILogger<KafkaConsumertHostingService> _logger;
-    //private ClusterClient _clusterClient;
+    private ClusterClient _clusterClient;
     private IConsumer<Null, string> _consumer;
     public KafkaConsumertHostingService(ILogger<KafkaConsumertHostingService> logger)
     {
@@ -48,7 +48,7 @@ public class KafkaConsumertHostingService : IHostedService
             {
                 _logger.LogInformation($"Received: {response.Message?.Value}");
             }
-
+            
             totalWaitTimeInMiliseconds += waitSingle;
             if (totalWaitTimeInMiliseconds >= MaxTestWaitTimeInMiliseconds)
             {
