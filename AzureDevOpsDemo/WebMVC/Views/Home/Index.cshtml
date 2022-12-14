@@ -1,13 +1,16 @@
-﻿@model string
+﻿@model IEnumerable<WeatherForecast>
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    @if (string.IsNullOrEmpty(Model))
+    @if (Model != null)
     {
-         <h1 class="display-4">Token @Model</h1>
+        @foreach(var we in Model)
+        {
+            <h1 class="display-4">@we.Date - @we.TemperatureC</h1>
+        }
     }
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
