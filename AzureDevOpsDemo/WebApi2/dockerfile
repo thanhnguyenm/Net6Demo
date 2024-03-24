@@ -1,0 +1,16 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
+WORKDIR /src
+
+COPY ./WebApi2 WebApi2/
+RUN dotnet restore WebApi2/WebApi2.csproj
+
+WORKDIR /src/WebApi2
+RUN dotnet publish -c Release -o /src/out
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+WORKDIR /app
+COPY --from=build-env /src/out .
+
+EXPOSE 80
+EXPOSE 443
+ENTRYPOINT [ "dotnet", "WebApi2.dll" ]

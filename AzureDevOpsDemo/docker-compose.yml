@@ -1,0 +1,61 @@
+version: '3.4'
+
+services:
+  webapi1:
+    image: thanhnmitc/webapi1:latest
+    container_name: webapi1
+    hostname: webapi1
+    build:
+      context: .
+      dockerfile: webapi1/dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=123456789x@X
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/root/.aspnet/DataProtection-Keys/aspnetapp.pfx
+    ports:
+      - 8090:80
+      - 8443:443
+    volumes:
+      - /C/Users/LAMDUCCOMPUTER/.aspnet/https:/root/.aspnet/DataProtection-Keys
+
+  webapi2:
+    image: thanhnmitc/webapi2:latest
+    container_name: webapi2
+    hostname: webapi2
+    build:
+      context: .
+      dockerfile: webapi2/dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=123456789x@X
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/root/.aspnet/DataProtection-Keys/aspnetapp.pfx
+    ports:
+      - 8091:80
+      - 9443:443
+    volumes:
+      - /C/Users/LAMDUCCOMPUTER/.aspnet/https:/root/.aspnet/DataProtection-Keys
+
+  getwayapi:
+    image: thanhnmitc/getwayapi:latest
+    container_name: getwayapi
+    build:
+      context: .
+      dockerfile: GetwayApi/dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=123456789x@X
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/root/.aspnet/DataProtection-Keys/aspnetapp.pfx
+    ports:
+      - 8092:80
+      - 10443:443
+    volumes:
+      - /C/Users/LAMDUCCOMPUTER/.aspnet/https:/root/.aspnet/DataProtection-Keys
+    links:
+      - webapi1
+      - webapi2
+    depends_on:
+      - webapi1
+      - webapi2

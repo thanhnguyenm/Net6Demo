@@ -1,0 +1,27 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/users",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8443
+        }
+
+      ],
+      "UpstreamPathTemplate": "/user-api/",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/weatherforecast",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9443
+        }
+      ]
+    }
+  ]
+}

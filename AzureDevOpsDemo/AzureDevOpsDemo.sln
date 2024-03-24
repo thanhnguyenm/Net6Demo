@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi2", "WebApi2\WebApi2.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebMVC", "WebMVC\WebMVC.csproj", "{63060A46-43EC-400A-88B7-8829B53ECE59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainEntities", "DomainEntities\DomainEntities.csproj", "{1C585145-BAFB-415E-BB02-B4486F67E255}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainEntities", "DomainEntities\DomainEntities.csproj", "{1C585145-BAFB-415E-BB02-B4486F67E255}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{05290EA0-9A4D-4F48-B259-E8E2DD01DF6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetwayApi", "GetwayApi\GetwayApi.csproj", "{5E94EF0B-128B-4B28-9792-B7C00DAB3F06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{1C585145-BAFB-415E-BB02-B4486F67E255}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C585145-BAFB-415E-BB02-B4486F67E255}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C585145-BAFB-415E-BB02-B4486F67E255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05290EA0-9A4D-4F48-B259-E8E2DD01DF6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05290EA0-9A4D-4F48-B259-E8E2DD01DF6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05290EA0-9A4D-4F48-B259-E8E2DD01DF6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05290EA0-9A4D-4F48-B259-E8E2DD01DF6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E94EF0B-128B-4B28-9792-B7C00DAB3F06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E94EF0B-128B-4B28-9792-B7C00DAB3F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E94EF0B-128B-4B28-9792-B7C00DAB3F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E94EF0B-128B-4B28-9792-B7C00DAB3F06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,7 +10,7 @@ using WebMVC.Models;
 
 namespace WebMVC.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class HomeController : Controller
     {
         private readonly IConfiguration _configuration;
@@ -21,13 +21,14 @@ namespace WebMVC.Controllers
         public HomeController(
             IConfiguration configuration,
             IHttpClientFactory httpClientFactory,
-            ILogger<HomeController> logger,
-            ITokenAcquisition tokenAcquisition)
+            ILogger<HomeController> logger
+            //ITokenAcquisition tokenAcquisition
+            )
         {
             _configuration = configuration;
             _httpClientFactory = httpClientFactory;
             _logger = logger;
-            _tokenAcquisition = tokenAcquisition;
+            //_tokenAcquisition = tokenAcquisition;
         }
 
         public async Task<IActionResult> Index(CancellationToken cancellationToken)
@@ -38,7 +39,7 @@ namespace WebMVC.Controllers
             using (var httpClient = _httpClientFactory.CreateClient())
             using (var request = new HttpRequestMessage(HttpMethod.Get, _configuration.GetValue<string>("DownstreamApi:BaseUrl") + "weatherforecast"))
             {
-                await PrepareAuthenticatedClient(httpClient);
+                //await PrepareAuthenticatedClient(httpClient);
                 var result = await SendRequestAsync<IEnumerable<WeatherForecast>>(httpClient, request, cancellationToken);
 
                 return View(result);

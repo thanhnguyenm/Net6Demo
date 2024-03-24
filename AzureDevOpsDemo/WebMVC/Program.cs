@@ -7,12 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddHttpClient();
+
 var scopes = builder.Configuration.GetValue<string>("DownstreamApi:Scopes").Split(' ');
 
-builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-                .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("AzureAd"))
-                .EnableTokenAcquisitionToCallDownstreamApi(scopes)
-                .AddInMemoryTokenCaches();
+//builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
+//                .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("AzureAd"))
+//                .EnableTokenAcquisitionToCallDownstreamApi(scopes)
+//                .AddInMemoryTokenCaches();
 
 
 var app = builder.Build();
