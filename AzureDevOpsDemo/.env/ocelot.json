@@ -10,7 +10,7 @@
         }
 
       ],
-      "UpstreamPathTemplate": "/user-api/",
+      "UpstreamPathTemplate": "/users-api/",
       "UpstreamHttpMethod": [ "GET" ],
       "DangerousAcceptAnyServerCertificateValidator": true,
       "Key": "all-users"
@@ -24,7 +24,7 @@
           "Port": 443
         }
       ],
-      "UpstreamPathTemplate": "/weather-api/",
+      "UpstreamPathTemplate": "/weathers-api/",
       "UpstreamHttpMethod": [ "GET" ],
       "DangerousAcceptAnyServerCertificateValidator": true,
       "Key": "all-products"
