@@ -1,0 +1,54 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: getway-deployment
+  namespace: k8sdemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: getway-api
+  template:
+    metadata:
+      labels:
+        app: getway-api
+    spec:
+      securityContext:
+        fsGroup: 2000 
+      containers:
+      - name: getway-api-con
+        image: thanhnmitc/getwayapi
+        env:
+        - name: ASPNETCOREASPNETCORE_ENVIRONMENT
+          value: Production
+        - name: ASPNETCORE_URLS
+          value: "http://+:5000"
+        ports:
+        - name: http
+          containerPort: 5000
+        volumeMounts:
+        - name: getwayconfig
+          mountPath: /app/ocelot.json
+          subPath: ocelot-k8s.json
+          readOnly: true
+      volumes:
+        - name: getwayconfig
+          configMap:
+            name: getwayconfig
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: getway-api-service
+  namespace: k8sdemo
+spec:
+  selector:
+    app: getway-api
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 5000
+      nodePort: 32000

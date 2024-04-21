@@ -17,7 +17,7 @@ services:
       - 8090:80
       - 8443:443
     volumes:
-      - /C/Users/thanh.nguyen6/.aspnet/https:/root/.aspnet/DataProtection-Keys
+      - /C/Users/LAMDUCCOMPUTER/.aspnet/https:/root/.aspnet/DataProtection-Keys
 
   webapi2:
     image: thanhnmitc/webapi2:latest
@@ -35,7 +35,7 @@ services:
       - 8091:80
       - 9443:443
     volumes:
-      - /C/Users/thanh.nguyen6/.aspnet/https:/root/.aspnet/DataProtection-Keys
+      - /C/Users/LAMDUCCOMPUTER/.aspnet/https:/root/.aspnet/DataProtection-Keys
 
   getwayapi:
     image: thanhnmitc/getwayapi:latest
@@ -55,7 +55,7 @@ services:
       - source: ocelot_config
         target: /app/ocelot.json
     volumes:
-      - /C/Users/thanh.nguyen6/.aspnet/https:/root/.aspnet/DataProtection-Keys
+      - /C/Users/LAMDUCCOMPUTER/.aspnet/https:/root/.aspnet/DataProtection-Keys
     links:
       - webapi1
       - webapi2

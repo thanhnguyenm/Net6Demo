@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-api-deployment
+  namespace: k8sdemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weather-api
+  template:
+    metadata:
+      labels:
+        app: weather-api
+    spec:
+      securityContext:
+        fsGroup: 2000 
+      containers:
+      - name: weather-api-con
+        image: thanhnmitc/webapi2
+        env:
+        - name: ASPNETCOREASPNETCORE_ENVIRONMENT
+          value: Production
+        - name: ASPNETCORE_URLS
+          value: "http://+:5000"
+        ports:
+        - name: http
+          containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: weather-api-service
+  namespace: k8sdemo
+spec:
+  selector:
+    app: weather-api
+  #type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 5000
+      #nodePort: 31000

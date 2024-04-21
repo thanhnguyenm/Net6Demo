@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: webapi1-deployment
+  namespace: k8sdemo
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: webapi1
   template:
-    
     metadata:
       labels:
         app: webapi1
@@ -19,23 +19,33 @@ spec:
       - name: webapi1
         image: thanhnmitc/webapi1
         env:
-        - name: ASPNETCORE_URLS
-          value: "https://+:443"
-        - name: ASPNETCORE_Kestrel__Certificates__Default__Password
-          value: "123456789x@X"
-        - name: ASPNETCORE_Kestrel__Certificates__Default__Path
-          value: "/app/DataProtection-Keys/cert.pfx"
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
+        # - name: ASPNETCORE_URLS
+        #   value: "https://+:443"
+        # - name: ASPNETCORE_Kestrel__Certificates__Default__Password
+        #   value: "123456789x@X"
+        # - name: ASPNETCORE_Kestrel__Certificates__Default__Path
+        #   value: "/app/DataProtection-Keys/cert.pfx"
+        # - name: SAMPLE_KEY1_ENV
+        #   valueFrom:
+        #     secretKeyRef: 
+        #       name: secret-sample
+        #       key: key1
+        # ports:
+        # - name: webapi1https
+        #   containerPort: 443
         ports:
-        - name: webapi1https
-          containerPort: 443
-        volumeMounts:
-        - name: config-volume
-          mountPath: /app/DataProtection-Keys
-          readOnly: true
-      volumes:
-      - name: pfx-certificate
-        secret:
-          secretName: aspnetapppfx
-      - name: config-volume
-        configMap:
-          name: aspnetappcer
+        - name: http
+          containerPort: 8080
+        # volumeMounts:
+        # - name: config-volume
+        #   mountPath: /app/DataProtection-Keys
+        #   readOnly: true
+      # volumes:
+      # - name: pfx-certificate
+      #   secret:
+      #     secretName: aspnetapppfx
+      # - name: config-volume
+      #   configMap:
+      #     name: aspnetappcer

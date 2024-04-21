@@ -1,0 +1,13 @@
+---
+releases:
+- name: userapi
+  chart: ./webapi1-chart
+  installed: true
+
+- name: weatherapi
+  chart: ./webapi2-chart
+  installed: true
+
+- name: getwayapi
+  chart: ./getwayapi-chart
+  installed: true

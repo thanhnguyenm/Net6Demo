@@ -1,0 +1,33 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/users/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "userapi-webapi1-chart",
+          "Port": 8080
+        }
+
+      ],
+      "UpstreamPathTemplate": "/users-api/",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DangerousAcceptAnyServerCertificateValidator": true,
+      "Key": "all-users"
+    },
+    {
+      "DownstreamPathTemplate": "/api/weatherforecast/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "weatherapi-webapi2-chart",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/weathers-api/",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DangerousAcceptAnyServerCertificateValidator": true,
+      "Key": "all-products"
+    }
+  ]  
+}

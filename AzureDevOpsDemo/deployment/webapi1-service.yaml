@@ -2,10 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   name: webapp1-service
+  namespace: k8sdemo
 spec:
   selector:
     app: webapi1
+  type: LoadBalancer
   ports:
     - protocol: TCP
-      port: 10443
-      targetPort: 443
+      port: 8080
+      targetPort: 8080
+      nodePort: 31000

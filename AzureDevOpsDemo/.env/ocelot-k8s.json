@@ -1,0 +1,36 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/users/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user-api-service",
+          "Port": 8080
+        }
+
+      ],
+      "UpstreamPathTemplate": "/users-api/",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DangerousAcceptAnyServerCertificateValidator": true,
+      "Key": "all-users"
+    },
+    {
+      "DownstreamPathTemplate": "/api/weatherforecast/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "weather-api-service",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/weathers-api/",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DangerousAcceptAnyServerCertificateValidator": true,
+      "Key": "all-products"
+    }
+  ]
+  // "GlobalConfiguration": {
+  //   "BaseUrl": "https://localhost:10443"
+  // }
+}
