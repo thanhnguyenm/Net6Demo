@@ -233,3 +233,8 @@ helm plugin install <path/url1>     # Install plugins
 helm plugin list                    # View a list of all installed plugins
 helm plugin update <plugin>         # Update plugins
 helm plugin uninstall <plugin>      # Uninstall a plugin
+
+
+https://github.com/helmfile/helmfile/releases
+
+helm plugin install https://github.com/aslafy-z/helm-git --version 0.16.0
